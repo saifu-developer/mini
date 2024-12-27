@@ -94,7 +94,7 @@ void searchBook() {
     char searchTitle[100];
     int found = 0;
 
-    getchar(); // Clear newline character
+    getchar(); 
     printf("Enter book title to search: ");
     fgets(searchTitle, sizeof(searchTitle), stdin);
     searchTitle[strcspn(searchTitle, "\n")] = '\0';
