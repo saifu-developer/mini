@@ -3,8 +3,6 @@
 #include <stdlib.h>
 
 #define MAX_BOOKS 100
-
-// Structure to store book details
 typedef struct {
     int id;
     char title[100];
@@ -14,8 +12,6 @@ typedef struct {
 
 Book library[MAX_BOOKS];
 int bookCount = 0;
-
-// Function prototypes
 void addBook();
 void displayBooks();
 void searchBook();
@@ -53,7 +49,6 @@ int main() {
     return 0;
 }
 
-// Function to add a book
 void addBook() {
     if (bookCount >= MAX_BOOKS) {
         printf("Library is full! Cannot add more books.\n");
@@ -79,7 +74,6 @@ void addBook() {
     printf("Book added successfully!\n");
 }
 
-// Function to display all books
 void displayBooks() {
     if (bookCount == 0) {
         printf("No books in the library.\n");
@@ -96,9 +90,6 @@ void displayBooks() {
         printf("--------------------\n");
     }
 }
-
-
-// Function to search for a book by title
 void searchBook() {
     char searchTitle[100];
     int found = 0;
@@ -106,7 +97,7 @@ void searchBook() {
     getchar(); // Clear newline character
     printf("Enter book title to search: ");
     fgets(searchTitle, sizeof(searchTitle), stdin);
-    searchTitle[strcspn(searchTitle, "\n")] = '\0'; // Remove newline
+    searchTitle[strcspn(searchTitle, "\n")] = '\0';
 
     for (int i = 0; i < bookCount; i++) {
         if (strcasecmp(library[i].title, searchTitle) == 0) {
